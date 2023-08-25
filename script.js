@@ -14,10 +14,10 @@ var userChoice = [];
 
 function generatePassword() {
   var usersCharsLength = prompt("Choose an amount of numbers from 8-128");
-
+// a prompt if the user does not put a valid number in it says choose a new number
   if (usersCharsLength < 8 || usersCharsLength > 128) {
     alert("Must be between 8 and 128 characters");
-    generatePassword();
+    return generatePassword();
   }
 
   var specialCharacter = confirm(
@@ -26,11 +26,11 @@ function generatePassword() {
   var numericCharacter = confirm("Would you like numbers in your password?");
 
   var uppercase = confirm("Would you like uppercase numbers would you like?");
-
+// if the user chooses to not add any special characters then that will have to redo the prompts and choose one
   var lowercase = confirm("Would you like lowercase would you like?");
   if (!specialCharacter && !numericCharacter && !uppercase && !lowercase) {
     alert("Please confirm atleast one of the special keys");
-    generatePassword();
+    return generatePassword();
   }
 
   var userOptions = {
@@ -40,7 +40,7 @@ function generatePassword() {
     willHaveUppChars: uppercase,
     willHaveLowChars: lowercase,
   };
-
+//if user chooses on of the options concat is adding that option to be added to the main array 
   if (userOptions.willHaveSpecChars) {
     userChoice = userChoice.concat(specialCharacterArr);
   }
@@ -69,7 +69,7 @@ function generatePassword() {
 
   return result.join("");
 }
-
+// now im shuffling the large array and putting them into a new one.
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
