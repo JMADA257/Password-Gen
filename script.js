@@ -13,8 +13,9 @@ var userChoice = [];
 //making prompts appear so when I click generate prompts asking for an amount of numbers, letters and special characters come up.
 
 function generatePassword() {
+  userChoice = [];
   var usersCharsLength = prompt("Choose an amount of numbers from 8-128");
-// a prompt if the user does not put a valid number in it says choose a new number
+  // a prompt if the user does not put a valid number in it says choose a new number
   if (usersCharsLength < 8 || usersCharsLength > 128) {
     alert("Must be between 8 and 128 characters");
     return generatePassword();
@@ -26,7 +27,7 @@ function generatePassword() {
   var numericCharacter = confirm("Would you like numbers in your password?");
 
   var uppercase = confirm("Would you like uppercase numbers would you like?");
-// if the user chooses to not add any special characters then that will have to redo the prompts and choose one
+  // if the user chooses to not add any special characters then that will have to redo the prompts and choose one
   var lowercase = confirm("Would you like lowercase would you like?");
   if (!specialCharacter && !numericCharacter && !uppercase && !lowercase) {
     alert("Please confirm atleast one of the special keys");
@@ -40,7 +41,7 @@ function generatePassword() {
     willHaveUppChars: uppercase,
     willHaveLowChars: lowercase,
   };
-//if user chooses on of the options concat is adding that option to be added to the main array 
+  //if user chooses on of the options concat is adding that option to be added to the main array
   if (userOptions.willHaveSpecChars) {
     userChoice = userChoice.concat(specialCharacterArr);
   }
