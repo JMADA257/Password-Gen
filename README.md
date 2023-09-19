@@ -44,3 +44,5 @@ Press the generate button and test for yourself!
 
 [Link](https://github.com/JMADA257/Password-Gen) - Github repo
 [Link](https://jmada257.github.io/Password-Gen/) - Website
+Screenshot 
+![Alt text](<assets/images/Screenshot 2023-09-19 091233.png>)
